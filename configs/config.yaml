@@ -1,0 +1,38 @@
+project:
+  name: "multimodal-crop-classification-s1-s2"
+  seed: 42
+  device: "cuda"
+
+data:
+  root_dir: "/mnt/d/Master/AN2/SEM1/CV3/DATA/Dataset_DACIA5/32x32_patches/32x32_SAR+MSI_patches/problem1"
+  train_split: 0.85
+  val_split: 0.15
+  num_classes: 12
+  spatial_size: [32, 32]
+  in_channels_s2: 12
+  in_channels_s1: 2
+
+model:
+  architecture: "DualStreamResNet"
+  s2_channels: [64, 128, 256]
+  s1_channels: [32, 64, 128]
+  fusion_dim: 256
+  dropout: 0.3
+
+training:
+  epochs: 50
+  batch_size: 128
+  num_workers: 4
+  optimizer:
+    lr: 0.001
+    weight_decay: 0.0001
+  scheduler:
+    name: "CosineAnnealingLR"
+    t_max: 50
+    min_lr: 0.00001
+
+generative_augmentation:
+  enabled: false
+  model_type: "cVAE"
+  latent_dim: 64
+  synthetic_samples_per_minority_class: 200

@@ -1,0 +1,50 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments & Packaging
+.venv/
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Jupyter & IDEs
+.ipynb_checkpoints
+.idea/
+.vscode/
+*.swp
+
+# Datasets (Strict conform barem laborator CV3)
+data/
+*.tif
+*.tiff
+*.mat
+*.h5
+*.hdf5
+*.nc
+*.zip
+*.tar.gz
+*.csv
+
+# Exceptions for git structure in data
+!data/.gitkeep
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Model Checkpoints & Logs
+checkpoints/
+*.pt
+*.pth
+*.onnx
+runs/
+logs/
+wandb/
+
+# OS Specific
+.DS_Store
+Thumbs.db
