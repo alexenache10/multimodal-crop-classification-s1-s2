@@ -4,7 +4,9 @@ project:
   device: "cuda"
 
 data:
-  root_dir: "/mnt/d/Master/AN2/SEM1/CV3/DATA/Dataset_DACIA5/32x32_patches/32x32_SAR+MSI_patches/problem1"
+# A se modifica calea ce pointeaza catre setul de date DACIA5 descarcat, problema1 local. 
+# in cazul de fata este hardcodata pe calea locala.
+  root_dir: "/mnt/d/Master/AN2/SEM1/IC3/DATA/Dataset_DACIA5/32x32_patches/32x32_SAR+MSI_patches/problem1"
   train_split: 0.85
   val_split: 0.15
   num_classes: 12
